@@ -19,6 +19,8 @@ df_idosos_domicilio = df_acesso[df_acesso['idade'].isin ([13,14,15,16,17]) &
 df_idosos_domicilio['resultado'] = df_idosos_domicilio['acesso_a_internet'].map({1: 'Sim', 2: 'Não'})
 print(df_idosos_domicilio['resultado'].value_counts())
 
+df_idosos_domicilio = df_idosos_domicilio[['idade', 'resultado']]
+
 percent = (df_idosos_domicilio['resultado'].value_counts(normalize=True) * 100).round(2)
 print(f'o percentual de idosos com acesso à internet é: {percent.get("Sim")}%')
 

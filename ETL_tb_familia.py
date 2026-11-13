@@ -9,14 +9,13 @@ df_familia.dropna(subset=['instrucao', 'familia_tipologia', 'idade'], inplace=Tr
 df_familia[['idade', 'instrucao', 'familia_tipologia']] = df_familia[['idade', 'instrucao', 'familia_tipologia']].apply(pd.to_numeric, errors='coerce')
 
 
-# 1. Filtrar apenas pelos códigos numéricos válidos
 df_idosos_familia = df_familia[
     (df_familia['idade'].isin([13, 14, 15, 16, 17])) &
     (df_familia['instrucao'].isin([1, 2, 3, 4])) &
     (df_familia['familia_tipologia'].isin([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
 ].dropna(subset=['idade', 'instrucao', 'familia_tipologia']).copy()
 
-# 2. Definir os dicionários para traduzir os códigos
+
 mapa_instrucao = {
     1: 'sem instrução e ensino fundamental incompleto',
     2: 'ensino fundamental completo e médio incompleto',
@@ -37,11 +36,11 @@ mapa_tipologia = {
     10: 'outras tipologias de familia'
 }
 
-# 3. Criar as colunas com os textos mapeados
 df_idosos_familia['instrucao_desc'] = df_idosos_familia['instrucao'].map(mapa_instrucao)
 df_idosos_familia['tipologia_desc'] = df_idosos_familia['familia_tipologia'].map(mapa_tipologia)
 
-# 4. Exibir as contagens e salvar o arquivo tratado
+df_idosos_familia = df_idosos_familia[['idade', 'instrucao_desc', 'tipologia_desc']]
+
 print(df_idosos_familia['instrucao_desc'].value_counts())
 print("\n", df_idosos_familia['tipologia_desc'].value_counts())
 

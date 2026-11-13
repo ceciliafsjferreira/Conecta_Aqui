@@ -9,3 +9,9 @@ venv/
 *_tratado.csv
 *_idade.csv
 *_internet.csv
+*_familia.csv
+
+
+#ignore os arquivos png
+*.png
+

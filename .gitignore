@@ -1,0 +1,11 @@
+# Ignorar ambiente virtual
+.venv/
+venv/
+
+# Ignorar bases brutas gigantes do IBGE
+*publico.csv
+
+# Caso os CSVs tratados também passem de 50-100 MB, descomente as linhas abaixo:
+*_tratado.csv
+*_idade.csv
+*_internet.csv

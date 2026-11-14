@@ -12,9 +12,15 @@ venv/
 *_familia.csv
 
 
-#ignore os arquivos png
+#ignore os arquivos png e csv
+*.csv
 *.png
 
 ia.py
 ia2.py
 graficos_cluster.py
+
+idosos_com_clusters.csv
+
+base_pronta_cluster.csv
+

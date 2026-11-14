@@ -10,17 +10,16 @@ venv/
 *_idade.csv
 *_internet.csv
 *_familia.csv
-
+*_cluster.csv
+*_clusters.csv
 
 #ignore os arquivos png e csv
-*.csv
+
 *.png
 
 ia.py
 ia2.py
 graficos_cluster.py
 
-idosos_com_clusters.csv
 
-base_pronta_cluster.csv
 
